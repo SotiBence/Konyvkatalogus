@@ -22,7 +22,28 @@ public class Book extends Item{
         this.authors = authors;
     }
 
+
     public Book(int id, String title) {
         super(id, title);
+    }
+
+    public void printInfo() {
+        System.out.println("📖 ID: " + getId() +
+                ", Title: " + getTitle() +
+                ", Authors: " + (authors != null ? authors : "No authors") +
+                ", Year: " + publicationYear +
+                ", Price: $" + price);
+    }
+
+    public Set<String> getAuthors() {
+        return authors;
+    }
+
+    public int getPublicationYear() {
+        return publicationYear;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }
