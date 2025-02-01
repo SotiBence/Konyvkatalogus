@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4aed6e3-8b87-472c-ba2c-61c6b5301b8d" name="Changes" comment="I feladat 2 része elkészült gyors keresés kivételével">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookManager.java" afterDir="false" />
+    <list default="true" id="f4aed6e3-8b87-472c-ba2c-61c6b5301b8d" name="Changes" comment="I feladat 3 része elkészült">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookEXC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/DatabaseManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +76,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738410256496</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="I feladat 3 része elkészült">
+      <option name="closed" value="true" />
+      <created>1738417746241</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738417746241</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,6 +102,7 @@
     <MESSAGE value="1.Feladat kész: Book.java, Item.java" />
     <MESSAGE value="I feladat 1 része elkészült" />
     <MESSAGE value="I feladat 2 része elkészült gyors keresés kivételével" />
-    <option name="LAST_COMMIT_MESSAGE" value="I feladat 2 része elkészült gyors keresés kivételével" />
+    <MESSAGE value="I feladat 3 része elkészült" />
+    <option name="LAST_COMMIT_MESSAGE" value="I feladat 3 része elkészült" />
   </component>
 </project>

@@ -34,7 +34,7 @@ public class Book extends Item implements Serializable {
                 ", Authors: " + (authors != null ? authors : "No authors") +
                 ", Year: " + publicationYear +
                 ", Price: $" + price);
-    }
+        }
 
     public Set<String> getAuthors() {
         return authors;
