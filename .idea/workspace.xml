@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4aed6e3-8b87-472c-ba2c-61c6b5301b8d" name="Changes" comment="I feladat 3 része elkészült">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookEXC.java" afterDir="false" />
+    <list default="true" id="f4aed6e3-8b87-472c-ba2c-61c6b5301b8d" name="Changes" comment="2 könyv hozzáadása">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookEXC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookEXC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/DatabaseManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,14 +35,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -84,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738417746241</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="2 könyv hozzáadása">
+      <option name="closed" value="true" />
+      <created>1738420855745</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1738420855745</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,6 +111,7 @@
     <MESSAGE value="I feladat 1 része elkészült" />
     <MESSAGE value="I feladat 2 része elkészült gyors keresés kivételével" />
     <MESSAGE value="I feladat 3 része elkészült" />
-    <option name="LAST_COMMIT_MESSAGE" value="I feladat 3 része elkészült" />
+    <MESSAGE value="2 könyv hozzáadása" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 könyv hozzáadása" />
   </component>
 </project>
