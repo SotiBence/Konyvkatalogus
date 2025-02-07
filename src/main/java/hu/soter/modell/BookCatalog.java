@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 public class BookCatalog {
-    List<Book> books = new ArrayList<>();
+    public List<Book> books = new ArrayList<>();
 
     public void addBook(int id, String title, int publicationYear, double price,Set<String> authors){
         Book newBook = new Book(id, title, publicationYear, price, authors);
