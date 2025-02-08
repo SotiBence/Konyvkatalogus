@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4aed6e3-8b87-472c-ba2c-61c6b5301b8d" name="Changes" comment="Dokumentáció elkészült">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hu/soter/dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hu/soter/security/AccessCoontrol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hu/soter/security/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hu/soter/security/User.java" afterDir="false" />
+    <list default="true" id="f4aed6e3-8b87-472c-ba2c-61c6b5301b8d" name="Changes" comment="osztáylok elkészültek és a program működik">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookEXC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookEXC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/dao/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/BookCatalogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/BookCatalogTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +61,11 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\Konyvkatalogus\src\main\java" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hu.soter.Main" />
@@ -237,7 +234,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739004742997</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="elkészült fájl">
+      <option name="closed" value="true" />
+      <created>1739011846675</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1739011846675</updated>
+    </task>
+    <task id="LOCAL-00011" summary="osztáylok elkészültek és a program működik">
+      <option name="closed" value="true" />
+      <created>1739011884753</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1739011884753</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,7 +273,9 @@
     <MESSAGE value="I feladat 4 része elkészült" />
     <MESSAGE value="BookTest és BookCatalogTest elkészült" />
     <MESSAGE value="Dokumentáció elkészült" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dokumentáció elkészült" />
+    <MESSAGE value="elkészült fájl" />
+    <MESSAGE value="osztáylok elkészültek és a program működik" />
+    <option name="LAST_COMMIT_MESSAGE" value="osztáylok elkészültek és a program működik" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Konyvkatalogus$BookCatalogTest.ic" NAME="BookCatalogTest Coverage Results" MODIFIED="1738845582125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
