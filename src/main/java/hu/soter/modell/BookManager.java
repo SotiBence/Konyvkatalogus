@@ -11,13 +11,16 @@ public class BookManager {
     private final String BINARY_FILE = "books.dat";
 
     public BookManager() {
+        // Lista a könyvek tárolására
         this.books = new ArrayList<>();
     }
 
+    // Új könyv hozzáadása a listához
     public void addBook(int id, String title, int publicationYear, double price, Set<String> authors){
         books.add(new Book(id, title, publicationYear, price, authors));
     }
 
+    // Könyvek listázása
     public void listBooks(){
         if (books.isEmpty()){
             System.out.println("Nincsenek könyvek a listában.");
@@ -29,6 +32,7 @@ public class BookManager {
         }
     }
 
+    // Könyvek mentése szöveges fájlba
     public void saveToTextFile(){
         try(BufferedWriter writer = new BufferedWriter(new FileWriter((TEXT_FILE)))){
             for (Book book : books) {
@@ -36,10 +40,11 @@ public class BookManager {
                 writer.newLine();
             }
         }catch (IOException e){
-            System.out.println("Hiba a fájl mentése közben: " + e.getMessage());
+            System.out.println("Hiba a txt fájl mentése közben: " + e.getMessage());
         }
     }
 
+    // Könyvek betöltése szöveges fájlból
     public void loadFromTextFile() {
         books.clear();
         try (BufferedReader reader = new BufferedReader(new FileReader(TEXT_FILE))) {
@@ -51,23 +56,26 @@ public class BookManager {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Hiba a fájl betöltése közben: " + e.getMessage());
+            System.err.println("Hiba a txt fájl betöltése közben: " + e.getMessage());
         }
     }
+
+    // Könyvek mentése bináris fájlba
     public void saveToBinaryFile() {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(BINARY_FILE))) {
             out.writeObject(books);
         } catch (IOException e) {
-            System.err.println("Hiba a fájl mentése közben: " + e.getMessage());
+            System.err.println("Hiba a bináris fájl mentése közben: " + e.getMessage());
         }
     }
 
+    // Könyvek betöltése bináris fájlból
     public void loadFromBinaryFile() {
         books.clear();
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(BINARY_FILE))) {
             books = (List<Book>) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            System.err.println("Hiba a fájl betöltése közben: " + e.getMessage());
+            System.err.println("Hiba a  bináris fájl betöltése közben: " + e.getMessage());
         }
     }
 }

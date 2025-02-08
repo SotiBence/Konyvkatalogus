@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 public class BookEXC {
+    // Könyv hozzáadása az adatbázishoz
     public void addBook(Book book) {
         String sql = "INSERT INTO books (title, publication_year, price, authors) VALUES (?, ?, ?, ?)";
 
@@ -26,6 +27,7 @@ public class BookEXC {
         }
     }
 
+    // Könyvek betöltése az adatbázisból
     public List<Book> getAllBooks() {
         List<Book> books = new ArrayList<>();
         String sql = "SELECT * FROM books";
@@ -49,6 +51,7 @@ public class BookEXC {
         return books;
     }
 
+    // Könyv törlése ID alapján tranzakciókezeléssel
     public boolean removeBookById(int id) {
         String sql = "DELETE FROM books WHERE id = ?";
 

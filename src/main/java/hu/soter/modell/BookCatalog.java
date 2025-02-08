@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Set;
 
 public class BookCatalog {
+    //Könyvek listájának létrehozása
     public List<Book> books = new ArrayList<>();
+
 
     public void addBook(int id, String title, int publicationYear, double price,Set<String> authors){
         Book newBook = new Book(id, title, publicationYear, price, authors);
@@ -13,6 +15,7 @@ public class BookCatalog {
         System.out.println("könyv hozzáadva: " + title);
     }
 
+    // Könyv eltávolitása ID alapján
     public boolean removeBookById(int id){
         for (Book book : books){
             if (book.getId() == id){
@@ -24,7 +27,7 @@ public class BookCatalog {
         System.out.println("Nincs ilyen Id-jű könyv: " + id);
         return false;
     }
-
+    // A lista tartalmának kiírása
     public void listBooks(){
         if (books.isEmpty()){
             System.out.println("Nincsenek könyvek a listában.");
@@ -36,6 +39,7 @@ public class BookCatalog {
         }
     }
 
+    // Könyv keresése cim alapján
     public Book findBookByTitle(String title){
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)){
@@ -45,6 +49,7 @@ public class BookCatalog {
         return null;
     }
 
+    // Könyv keresése szerző alapján
     public List<Book> findBooksByAuthor(String author){
         List<Book> foundBooks = new ArrayList<>();
         for (Book book : books) {

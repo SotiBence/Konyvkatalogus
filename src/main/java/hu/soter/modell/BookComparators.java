@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 public class BookComparators {
 
+    // Rendezés szerző szerint
     public static class AuthorComparator implements Comparator<Book> {
         @Override
         public int compare(Book a1, Book a2) {
@@ -13,6 +14,7 @@ public class BookComparators {
         }
     }
 
+    // Rendezés ár szerint
     public static class priceComparator implements Comparator<Book> {
         @Override
         public int compare(Book a1, Book a2){
@@ -20,6 +22,7 @@ public class BookComparators {
         }
     }
 
+    // Rendezés év szerint
     public static class YearComparator implements Comparator<Book> {
         @Override
         public int compare(Book a1, Book a2) {
