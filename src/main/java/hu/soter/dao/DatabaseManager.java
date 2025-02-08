@@ -1,7 +1,5 @@
-package hu.soter.modell;
+package hu.soter.dao;
 
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

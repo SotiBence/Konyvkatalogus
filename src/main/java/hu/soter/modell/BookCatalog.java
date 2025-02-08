@@ -1,5 +1,12 @@
 package hu.soter.modell;
 
+import hu.soter.dao.DatabaseManager;
+import hu.soter.security.AccessCoontrol;
+import hu.soter.security.User;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -9,14 +16,22 @@ public class BookCatalog {
     public List<Book> books = new ArrayList<>();
 
 
-    public void addBook(int id, String title, int publicationYear, double price,Set<String> authors){
+    public void addBook(User user, int id, String title, int publicationYear, double price, Set<String> authors){
+        if (!AccessCoontrol.canAddBook(user)) {
+            System.out.println("Hozzáférés megtagadva: nincs jogosultság könyv hozzáadásához.");
+            return;
+        }
         Book newBook = new Book(id, title, publicationYear, price, authors);
         books.add(newBook);
         System.out.println("könyv hozzáadva: " + title);
     }
 
     // Könyv eltávolitása ID alapján
-    public boolean removeBookById(int id){
+    public boolean removeBookById(User user, int id){
+        if (!AccessCoontrol.canRemoveBook(user)) {
+            System.out.println("Hozzáférés megtagadva: nincs jogosultság könyv törlésére.");
+            return false;
+        }
         for (Book book : books){
             if (book.getId() == id){
                 books.remove(book);
@@ -28,7 +43,11 @@ public class BookCatalog {
         return false;
     }
     // A lista tartalmának kiírása
-    public void listBooks(){
+    public void listBooks(User user){
+        if (!AccessCoontrol.canViewBooks(user)) {
+            System.out.println("Hozzáférés megtagadva: nincs jogosultság könyvek listázására.");
+            return;
+        }
         if (books.isEmpty()){
             System.out.println("Nincsenek könyvek a listában.");
             return;
@@ -58,6 +77,30 @@ public class BookCatalog {
             }
         }
         return foundBooks;
+    }
+
+    public void saveToDatabase() {
+        String sql = "INSERT INTO books (title, publication_year, price, authors) VALUES (?, ?, ?, ?)";
+
+        try (Connection conn = DatabaseManager.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            for (Book book : books) {
+                stmt.setString(1, book.getTitle());
+                stmt.setInt(2, book.getPublicationYear());
+                stmt.setDouble(3, book.getPrice());
+                stmt.setString(4, String.join(",", book.getAuthors()));
+
+                stmt.addBatch(); // Több beszúrás egyszerre
+            }
+            stmt.executeBatch(); // Batch végrehajtása
+
+            System.out.println("Könyvek sikeresen mentve az adatbázisba!");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Hiba történt a könyvek adatbázisba mentése során.");
+        }
     }
 
 }

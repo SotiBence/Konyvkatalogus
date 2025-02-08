@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4aed6e3-8b87-472c-ba2c-61c6b5301b8d" name="Changes" comment="BookTest és BookCatalogTest elkészült">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="f4aed6e3-8b87-472c-ba2c-61c6b5301b8d" name="Changes" comment="Dokumentáció elkészült">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hu/soter/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hu/soter/security/AccessCoontrol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hu/soter/security/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hu/soter/security/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookComparators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookComparators.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookEXC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookEXC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/modell/BookManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/soter/modell/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/soter/dao/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/BookCatalogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/BookCatalogTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,29 +40,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BookCatalogTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BookTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookCatalogTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookCatalogTest.testAddBook.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookCatalogTest.testFindBookByTitleFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookCatalogTest.testFindBookByTitleSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookCatalogTest.testFindBooksByAuthorFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookCatalogTest.testFindBooksByAuthorSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookCatalogTest.testRemoveBookByIdFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookCatalogTest.testRemoveBookByIdSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTest.testBookConstructorsAndGetters.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTest.testFromStringInvalid.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTest.testFromStringValid.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookTest.testToString.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BookCatalogTest.executor": "Run",
+    "Application.BookTest.executor": "Run",
+    "Application.Main.executor": "Run",
+    "JUnit.BookCatalogTest.executor": "Run",
+    "JUnit.BookCatalogTest.testAddBook.executor": "Run",
+    "JUnit.BookCatalogTest.testAdminCanAddBook.executor": "Run",
+    "JUnit.BookCatalogTest.testAdminCanRemoveBook.executor": "Run",
+    "JUnit.BookCatalogTest.testFindBookByTitleFail.executor": "Run",
+    "JUnit.BookCatalogTest.testFindBookByTitleSuccess.executor": "Run",
+    "JUnit.BookCatalogTest.testFindBooksByAuthorFail.executor": "Run",
+    "JUnit.BookCatalogTest.testFindBooksByAuthorSuccess.executor": "Run",
+    "JUnit.BookCatalogTest.testGuestCanListBooks.executor": "Run",
+    "JUnit.BookCatalogTest.testGuestCannotAddBook.executor": "Run",
+    "JUnit.BookCatalogTest.testRemoveBookByIdFail.executor": "Run",
+    "JUnit.BookCatalogTest.testRemoveBookByIdSuccess.executor": "Run",
+    "JUnit.BookCatalogTest.testUserCanListBooks.executor": "Run",
+    "JUnit.BookCatalogTest.testUserCannotAddBook.executor": "Run",
+    "JUnit.BookTest.executor": "Run",
+    "JUnit.BookTest.testBookConstructorsAndGetters.executor": "Run",
+    "JUnit.BookTest.testFromStringInvalid.executor": "Run",
+    "JUnit.BookTest.testFromStringValid.executor": "Run",
+    "JUnit.BookTest.testToString.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hu.soter.Main" />
@@ -91,7 +98,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookCatalogTest.testFindBooksByAuthorFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookCatalogTest.testFindBookByTitleSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Konyvkatalogus" />
       <extension name="coverage">
         <pattern>
@@ -101,7 +108,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.BookCatalogTest" />
-      <option name="METHOD_NAME" value="testFindBooksByAuthorFail" />
+      <option name="METHOD_NAME" value="testFindBookByTitleSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,7 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookCatalogTest.testGuestCanListBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Konyvkatalogus" />
       <extension name="coverage">
         <pattern>
@@ -132,8 +139,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.BookTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="test.BookCatalogTest" />
+      <option name="METHOD_NAME" value="testGuestCanListBooks" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,10 +149,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.BookTest" />
         <item itemvalue="JUnit.BookCatalogTest" />
-        <item itemvalue="JUnit.BookCatalogTest.testFindBooksByAuthorFail" />
+        <item itemvalue="JUnit.BookCatalogTest.testFindBookByTitleSuccess" />
         <item itemvalue="JUnit.BookCatalogTest.testFindBooksByAuthorSuccess" />
+        <item itemvalue="JUnit.BookCatalogTest.testGuestCanListBooks" />
       </list>
     </recent_temporary>
   </component>
@@ -221,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738956640349</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Dokumentáció elkészült">
+      <option name="closed" value="true" />
+      <created>1739004742997</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739004742997</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,7 +259,8 @@
     <MESSAGE value="2 könyv hozzáadása" />
     <MESSAGE value="I feladat 4 része elkészült" />
     <MESSAGE value="BookTest és BookCatalogTest elkészült" />
-    <option name="LAST_COMMIT_MESSAGE" value="BookTest és BookCatalogTest elkészült" />
+    <MESSAGE value="Dokumentáció elkészült" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dokumentáció elkészült" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Konyvkatalogus$BookCatalogTest.ic" NAME="BookCatalogTest Coverage Results" MODIFIED="1738845582125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

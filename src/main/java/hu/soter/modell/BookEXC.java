@@ -1,5 +1,7 @@
 package hu.soter.modell;
 
+import hu.soter.dao.DatabaseManager;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;

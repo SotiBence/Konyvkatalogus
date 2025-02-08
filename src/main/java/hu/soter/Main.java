@@ -1,16 +1,43 @@
 package hu.soter;
 
-import hu.soter.modell.Book;
-import hu.soter.modell.BookEXC;
-import hu.soter.modell.BookManager;
+import hu.soter.dao.UserDAO;
+import hu.soter.modell.*;
+import hu.soter.security.AccessCoontrol;
+import hu.soter.security.Role;
+import hu.soter.security.User;
 
 import java.util.List;
+import java.util.Scanner;
 import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
+
+        BookCatalog catalog = new BookCatalog();
         BookManager manager = new BookManager();
         BookEXC bookEXC = new BookEXC();
+
+        Scanner scanner = new Scanner(System.in);
+
+        User admin = new User("AdminUser", Role.ADMIN);
+        User user = new User("RegularUser", Role.USER);
+        User guest = new User("GuestUser", Role.GUEST);
+
+        // ADMIN hozzáad egy könyvet
+        catalog.addBook(admin, 1, "Harry Potter", 1997, 39.99, Set.of("J.K. Rowling"));
+
+        // USER próbál könyvet hozzáadni (NEM engedélyezett)
+        catalog.addBook(user, 2, "The Hobbit", 1937, 25.99, Set.of("J.R.R. Tolkien"));
+
+        // GUEST próbál könyvet törölni (NEM engedélyezett)
+        catalog.removeBookById(guest, 1);
+
+        // USER listázza a könyveket (ENGEDÉLYEZETT)
+        catalog.listBooks(user);
+
+        // ADMIN töröl egy könyvet
+        catalog.removeBookById(admin, 1);
+
 
         // Könyvek hozzáadása
         manager.addBook(1, "Harry Potter", 1997, 25.99, Set.of("J.K. Rowling"));
@@ -82,5 +109,80 @@ public class Main {
         for (hu.soter.modell.Book b : sortedBooks) {
             b.printInfo();
         }
+
+        System.out.print("Felhasználónév: ");
+        String username = scanner.nextLine();
+        System.out.print("Jelszó: ");
+        String password = scanner.nextLine();
+
+        user = UserDAO.authenticate(username, password);
+        if (user == null) {
+            System.out.println("Hibás bejelentkezés!");
+            return;
+        }
+
+        System.out.println("Bejelentkezés sikeres! Szerepkör: " + user.getRole());
+
+        boolean running = true;
+        while (running) {
+            System.out.println("\nMenü:");
+            System.out.println("1 - Könyv hozzáadása");
+            System.out.println("2 - Könyv törlése");
+            System.out.println("3 - Könyvek listázása");
+            System.out.println("4 - Könyv keresése");
+            System.out.println("5 - Mentés fájlba");
+            System.out.println("6 - Betöltés fájlból");
+            System.out.println("7 - Mentés adatbázisba");
+            System.out.println("8 - Kilépés");
+            System.out.print("Választás: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1 -> {
+                    if (AccessCoontrol.hasPermission(user, "ADD_BOOK")) {
+                        System.out.print("Cím: ");
+                        String title = scanner.nextLine();
+                        System.out.print("Év: ");
+                        int year = scanner.nextInt();
+                        System.out.print("Ár: ");
+                        double price = scanner.nextDouble();
+                        scanner.nextLine();
+                        System.out.print("Szerzők (vesszővel elválasztva): ");
+                        Set<String> authors = Set.of(scanner.nextLine().split(","));
+                        catalog.addBook(user, catalog.books.size() + 1, title, year, price, authors);
+                    } else {
+                        System.out.println("Nincs jogosultságod hozzáadni könyvet.");
+                    }
+                }
+                case 2 -> {
+                    if (AccessCoontrol.hasPermission(user, "DELETE_BOOK")) {
+                        System.out.print("Könyv ID: ");
+                        int id = scanner.nextInt();
+                        catalog.removeBookById(user, id);
+                    } else {
+                        System.out.println("Nincs jogosultságod törölni könyvet.");
+                    }
+                }
+                case 3 -> catalog.listBooks(user);
+                case 4 -> {
+                    System.out.print("Keresett cím: ");
+                    String searchTitle = scanner.nextLine();
+                    catalog.findBookByTitle(searchTitle);
+                }
+                case 5 -> manager.saveToTextFile();
+                case 6 -> manager.loadFromTextFile();
+                case 7 -> catalog.saveToDatabase();
+                case 8 -> {
+                    System.out.println("Kilépés...");
+                    running = false;
+                }
+                default -> System.out.println("Érvénytelen választás.");
+            }
+        }
+
+
+
     }
 }
